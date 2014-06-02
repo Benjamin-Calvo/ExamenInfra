@@ -1,7 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Instituto Tecnológico de Costa Rica
+Administración en Tecnologías de Información
+Escuela de Ingeniería en Computación
+
+Infraestructura Tecnológica I
+Examén Práctico #2
+Manejo de Memoria Virtual
+
+Integrantes:
+    Benjamín Calvo de León
+    Alexander Durán Martínez
+    Jose Pablo Matamoros Moya
+    Víctor Vargas Ramírez
  */
 
 package exameninfra;
