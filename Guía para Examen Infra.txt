@@ -1,0 +1,104 @@
+﻿-------------------Información General--------------------
+
+Políticas de Fetch (involucra páginas virtuales y memoria principal)
+
+-Demand paging:
+
+	Solo trae páginas virtuales a memoria principal cuando una referencia 
+	es hecha a una de las ubicaciones contenidas en dicha página virtual 
+
+-Prepaging:
+
+	Otras páginas, distintas de aquella que es demandada por un page fault,
+	son traídas
+	
+-------------
+
+Placement policy (involucra procesos y memoria principal)
+
+-First available:
+	
+
+-Next available
+
+-------------
+	
+Replacement policy
+
+-LRU:
+
+	
+-FIFO:
+
+	
+-MRU:
+
+	
+-Clock:
+
+-------------
+	
+Resident Set Management
+
+
+Replacement scope (que cambia cuando hay page fault y no hay frames disponibles)
+
+-Global:
+	considera todas las paginas desbloqueadas en página principal
+	
+-Local:
+	considera solo las páginas traídas a memoria principal por el proceso
+	que ocasiona el page fault
+
+
+Size
+
+-Fixed (Solo considera replacement scope local)
+
+	para un proceso, los frames asignados ya estan definidos y no puede
+	tocar otro frame aparte de estos
+
+	
+-Variable (considera ambos replacement scopes)
+
+	los frames asignados a un proceso puede variar eventualmente para
+	mantener el set de trabajo del proceso	
+
+-------------
+
+Cleaning policy
+
+-Demand:
+	
+
+-Pre-cleaning:
+	
+
+
+Load Control
+
+-Degree of Multiprogramming:
+
+
+-------------------Requisitos Funcionales--------------------
+
+Simulación de ejecución de procesos con llamadas a referencias de memoria
+
+-Debe usar todos los parámetros definidos en la Información General
+
+-Atributos del sistema:
+
+	Cantidad de Memoria
+	Tamaño de Páginas
+
+-Leer, de un archivo de texto, la definición de los procesos y sus requerimientos
+de memoria
+
+-Leer, un archivo de texto, un conjunto de referencias de memoria
+
+-Simular la ejecución de las referencias, pudiendo escoger el usuario el momento
+para ver el estado de la memoria física y virtual
+
+-Este último punto, si despúes de cada referencia o depués de n referencias.
+
+-Debe contar con un manual de usuario integrado en el programa
