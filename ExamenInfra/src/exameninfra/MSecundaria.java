@@ -1,11 +1,13 @@
- public class ListaSimpleCircular
+package exameninfra;
+
+public class MSecundaria
 {
-  public NodosListaSimpleCircular PrimerNodo;
+  public PaginaV PrimerNodo;
   String Nombre;
 
 //Constructor construye una lista vacia con un nombre s
 
-//Retorna True si Lista Vacía
+//Retorna True si Lista Vacï¿½a
  public boolean VaciaLista () {return PrimerNodo == null;}
 
 // Imprime el contenido de la lista
@@ -18,7 +20,7 @@
   else
   {
 	  System.out.print( "La  " +  Nombre  +"  es:  ");
-      NodosListaSimpleCircular Actual = PrimerNodo;
+      PaginaV Actual = PrimerNodo;
 
      while (Actual.siguiente != PrimerNodo)
 	 {
@@ -31,28 +33,28 @@
    }
  }
 
- public ListaSimpleCircular (String s)
+ public MSecundaria (String s)
 { Nombre = s;
   PrimerNodo =null;
 }
 
 //Constructor construye una lista vacia con un nombre de List
-public ListaSimpleCircular(){ this ("Lista");}
+public MSecundaria(){ this ("Lista");}
 
 //Inserta un Elemento al Frente de la Lista
-//Si esta vacía PrimerNodo y UltimoNodo se refieren al nuevo nodo. Si no PrimerNodo se refiere al nuevo nodo.
+//Si esta vacï¿½a PrimerNodo y UltimoNodo se refieren al nuevo nodo. Si no PrimerNodo se refiere al nuevo nodo.
 
 public void InsertaInicio (int ElemInser)
 {
 	if (VaciaLista())
 		{
-			PrimerNodo = new NodosListaSimpleCircular (ElemInser);
+			PrimerNodo = new PaginaV (ElemInser);
 			PrimerNodo.siguiente = PrimerNodo;
 		}
 	else
 		{
-			NodosListaSimpleCircular Nuevo = new NodosListaSimpleCircular(ElemInser);
-			NodosListaSimpleCircular Aux = PrimerNodo;
+			PaginaV Nuevo = new PaginaV(ElemInser);
+			PaginaV Aux = PrimerNodo;
 			while (Aux.siguiente !=PrimerNodo)
 				Aux = Aux.siguiente;
 			Aux.siguiente = Nuevo;
@@ -63,34 +65,34 @@ public void InsertaInicio (int ElemInser)
 
 
 //Inserta al Final de la Lista
-//Si la lista se encuentra vacía, el PrimerNodo y el UltimoNodo se refieren al nuevo nodo. Si no, la variable de siguiente de UltimoNodo se refiere al nuevo nodo.
+//Si la lista se encuentra vacï¿½a, el PrimerNodo y el UltimoNodo se refieren al nuevo nodo. Si no, la variable de siguiente de UltimoNodo se refiere al nuevo nodo.
 public void InsertaFinal(int ElemInser)
 {
 	if ( VaciaLista())
 		{
-			PrimerNodo = new NodosListaSimpleCircular (ElemInser);
+			PrimerNodo = new PaginaV (ElemInser);
      		PrimerNodo.siguiente = PrimerNodo;
 		}
 	else
 		{
-			NodosListaSimpleCircular Aux = PrimerNodo;
+			PaginaV Aux = PrimerNodo;
      		while (Aux.siguiente != PrimerNodo)
         		Aux = Aux.siguiente;
-     		NodosListaSimpleCircular Nuevo=new NodosListaSimpleCircular (ElemInser);
+     		PaginaV Nuevo=new PaginaV (ElemInser);
      		Aux.siguiente = Nuevo;
      		Nuevo.siguiente = PrimerNodo;   //Referencia hacia primer Nodo
      	}
 }
 
-//Inserta un Elemento en una posición dada
-//Si esta vacía PrimerNodo y UltimoNodo se refieren al nuevo nodo.
+//Inserta un Elemento en una posiciï¿½n dada
+//Si esta vacï¿½a PrimerNodo y UltimoNodo se refieren al nuevo nodo.
 //Si no PrimerNodo se refiere al nuevo nodo.
 
 public void InsertaMedio (int ElemInser,int Posicion)
 {
 	if (VaciaLista())
 	{
-		PrimerNodo = new NodosListaSimpleCircular (ElemInser);
+		PrimerNodo = new PaginaV (ElemInser);
 		PrimerNodo.siguiente = PrimerNodo;
 	}
 	else
@@ -99,14 +101,14 @@ public void InsertaMedio (int ElemInser,int Posicion)
 	 			InsertaInicio(ElemInser);
       		else
       			{
-      				NodosListaSimpleCircular Aux = PrimerNodo;
+      				PaginaV Aux = PrimerNodo;
          			int i = 2;
          			while ( (i != Posicion) & (Aux.siguiente != PrimerNodo))
          				{
          					i++;
          					Aux = Aux.siguiente;
          				}
-      				NodosListaSimpleCircular Nuevo = new NodosListaSimpleCircular(ElemInser);
+      				PaginaV Nuevo = new PaginaV(ElemInser);
       				Nuevo.siguiente = Aux.siguiente;
       				Aux.siguiente =Nuevo;
        			}
@@ -115,7 +117,7 @@ public void InsertaMedio (int ElemInser,int Posicion)
 
 
 //Eliminar al Inicio
-//Debe tomar en cuenta si la lista se encuentra vacía y producir una excepción, en caso contrario si PrimerNodo y UltimoNodo referencian al mismo nodo, ambos deben ser null y sino  primernodo será igual a PrimerNodo.siguiente
+//Debe tomar en cuenta si la lista se encuentra vacï¿½a y producir una excepciï¿½n, en caso contrario si PrimerNodo y UltimoNodo referencian al mismo nodo, ambos deben ser null y sino  primernodo serï¿½ igual a PrimerNodo.siguiente
 
 public void EliminaInicio()
 {
@@ -128,7 +130,7 @@ public void EliminaInicio()
 			 else
 			 	{
 			 		PrimerNodo = PrimerNodo.siguiente;
-			 		NodosListaSimpleCircular Aux = PrimerNodo;
+			 		PaginaV Aux = PrimerNodo;
      				while (Aux.siguiente!=PrimerNodo)
      					Aux = Aux.siguiente;
      				Aux.siguiente=PrimerNodo;
@@ -137,7 +139,7 @@ public void EliminaInicio()
 }
 
 //Eliminar al Final
-//Debe tomar en cuenta si la lista se encuentra vacía y producir una excepción, en caso contrario si PrimerNodo y UltimoNodo referencian al mismo nodo, ambos deben ser null y sino  ultimonodo en el campo siguiente será nulo
+//Debe tomar en cuenta si la lista se encuentra vacï¿½a y producir una excepciï¿½n, en caso contrario si PrimerNodo y UltimoNodo referencian al mismo nodo, ambos deben ser null y sino  ultimonodo en el campo siguiente serï¿½ nulo
 
 public void EliminaFinal ()
 {
@@ -149,7 +151,7 @@ public void EliminaFinal ()
 				PrimerNodo = null;
 			else
 				{
-					NodosListaSimpleCircular Actual =PrimerNodo;
+					PaginaV Actual =PrimerNodo;
 					while (Actual.siguiente.siguiente != PrimerNodo)
 						Actual = Actual.siguiente;
 					Actual.siguiente = PrimerNodo;
@@ -158,8 +160,8 @@ public void EliminaFinal ()
 
 }
 
-//Elimina un Elemento en una posición dada
-//Si esta vacía PrimerNodo y UltimoNodo se refieren al nuevo nodo.
+//Elimina un Elemento en una posiciï¿½n dada
+//Si esta vacï¿½a PrimerNodo y UltimoNodo se refieren al nuevo nodo.
 //Si no PrimerNodo se refiere al nuevo nodo.
 
 public void EliminaMedio (int Posicion)
@@ -168,8 +170,8 @@ public void EliminaMedio (int Posicion)
         System.out.println( "Nada");
     else
     	{
-    		NodosListaSimpleCircular Aux =null;
-      		NodosListaSimpleCircular Actual = PrimerNodo;
+    		PaginaV Aux =null;
+      		PaginaV Actual = PrimerNodo;
      		int i =1;
      		while (( i != Posicion) & (Actual.siguiente != PrimerNodo))
      			{
