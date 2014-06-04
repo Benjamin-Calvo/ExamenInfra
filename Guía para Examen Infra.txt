@@ -1,4 +1,4 @@
-﻿-------------------Información General--------------------
+﻿-------------------Información General-------------------- -
 
 Políticas de Fetch (involucra páginas virtuales y memoria principal)
 
