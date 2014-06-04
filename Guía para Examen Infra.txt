@@ -1,4 +1,4 @@
-﻿-------------------Información General-------------------- -
+﻿-------------------Información General--------------------
 
 Políticas de Fetch (involucra páginas virtuales y memoria principal)
 
@@ -98,6 +98,8 @@ Simulación de ejecución de procesos con llamadas a referencias de memoria
 
 	Cantidad de Memoria
 	Tamaño de Páginas
+	Estado del proceso
+	
 
 -Leer, de un archivo de texto, la definición de los procesos y sus requerimientos
 de memoria
