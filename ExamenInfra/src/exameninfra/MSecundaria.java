@@ -11,26 +11,26 @@ public class MSecundaria {
         return PrimerNodo == null;
     }
 
-// Imprime el contenido de la lista
-    public void Imprimir() {
+// Imprime el contenido de la memoria secundaria
+    public void ImprimirPaginas() {
         if (VaciaLista()) {
-            System.out.println("vacia" + Nombre);
+            System.out.println("-No hay páginas.");
         } //fin del primer if
         else {
-            System.out.print("La secuencia  " + Nombre + "  es:  ");
-            PaginaV Actual = PrimerNodo;
-
-            while (Actual.siguiente != PrimerNodo) {
-                System.out.println(Actual.tamaño + " ");
-                for (Referencia referencia_actual : Actual.referencias_contenidas) {
-                    System.out.println("\t"+referencia_actual + " ");
-                    
+            System.out.println("Páginas virtuales existentes: ");
+            PaginaV pagina_actual = PrimerNodo;
+            while (pagina_actual.siguiente != PrimerNodo) {
+                System.out.println("La página "+pagina_actual.id_pagina+" contiene:");
+                for (Referencia referencia_actual : pagina_actual.referencias_contenidas) {
+                    System.out.println("\tLa referencia con la dirección "+referencia_actual.getDireccion() + " contiene "+referencia_actual.getContenido()+"\n");
                 }
-                Actual = Actual.siguiente;
+                pagina_actual = pagina_actual.siguiente;
             }
-
-            System.out.println();
-            System.out.println();
+            System.out.println("La página " + pagina_actual.id_pagina + " contiene:");
+            for (Referencia referencia_actual : pagina_actual.referencias_contenidas) {
+                System.out.println("\tLa referencia con la dirección " + referencia_actual.getDireccion() + " contiene " + referencia_actual.getContenido() + "\n");
+            }
+            System.out.println("\n\n");
         }
     }
 
@@ -41,7 +41,7 @@ public class MSecundaria {
 
 //Constructor construye una lista vacia con un nombre de List
     public MSecundaria() {
-        this("Lista");
+        this("Memoria Secundaria");
     }
 
 //Inserta un Elemento al Frente de la Lista
@@ -64,16 +64,16 @@ public class MSecundaria {
 
 //Inserta al Final de la Lista
 //Si la lista se encuentra vac�a, el PrimerNodo y el UltimoNodo se refieren al nuevo nodo. Si no, la variable de siguiente de UltimoNodo se refiere al nuevo nodo.
-    public void InsertaFinal(int id,int ElemInser) {
+    public void InsertaFinal(int id,int tamanio) {
         if (VaciaLista()) {
-            PrimerNodo = new PaginaV(id,ElemInser);
+            PrimerNodo = new PaginaV(id,tamanio);
             PrimerNodo.siguiente = PrimerNodo;
         } else {
             PaginaV Aux = PrimerNodo;
             while (Aux.siguiente != PrimerNodo) {
                 Aux = Aux.siguiente;
             }
-            PaginaV Nuevo = new PaginaV(id, ElemInser);
+            PaginaV Nuevo = new PaginaV(id, tamanio);
             Aux.siguiente = Nuevo;
             Nuevo.siguiente = PrimerNodo;   //Referencia hacia primer Nodo
         }

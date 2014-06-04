@@ -11,27 +11,45 @@ public class MPrimaria
  public boolean VaciaLista () {return PrimerNodo == null;}
 
 // Imprime el contenido de la lista
- public void Imprimir()
- { if (VaciaLista())
-   {
-     System.out.println( "vacia" +Nombre);
-   }
-   //fin del primer if
-  else
-  {
-	  System.out.print( "La  " +  Nombre  +"  es:  ");
-      Frame Actual = PrimerNodo;
+    public void ImprimirFrames() {
+        if (VaciaLista()) {
+            System.out.println("No hay frames");
+        } //fin del primer if
+        else {
+            System.out.println("Frames existentes: ");
+            Frame frame_actual = PrimerNodo;
+            while (frame_actual.siguiente != PrimerNodo) {
+                if (frame_actual.pagina_cargada != null && frame_actual.id_propietario != 0) {
+                    System.out.println("El frame " + frame_actual.id_frame + " pertenece al proceso: " + frame_actual.id_propietario + "y contiene la página: " + frame_actual.pagina_cargada.id_pagina + "\n");
+                } else {
+                    if (frame_actual.id_propietario != 0) {
+                        System.out.println("El frame " + frame_actual.id_frame + " pertenece al proceso: " + frame_actual.id_propietario + " y no tiene página cargada\n");
+                    }
+                    if (frame_actual.pagina_cargada != null) {
+                        System.out.println("El frame " + frame_actual.id_frame + " contiene la página: " + frame_actual.pagina_cargada.id_pagina + "\n");
+                    } else {
+                        System.out.println("El frame " + frame_actual.id_frame + "no pertenece a ningún proceso ni tiene página cargada");
+                    }
+                }
 
-     while (Actual.siguiente != PrimerNodo)
-	 {
-      System.out.print (Actual.datos + " ");
-      Actual=Actual.siguiente;
-     }
+                frame_actual = frame_actual.siguiente;
+            }
+            if (frame_actual.pagina_cargada != null && frame_actual.id_propietario != 0) {
+                System.out.println("El frame " + frame_actual.id_frame + " pertenece al proceso: " + frame_actual.id_propietario + "y contiene la página: " + frame_actual.pagina_cargada.id_pagina + "\n");
+            } else {
+                if (frame_actual.id_propietario != 0) {
+                    System.out.println("El frame " + frame_actual.id_frame + " pertenece al proceso: " + frame_actual.id_propietario + " y no tiene página cargada\n");
+                }
+                if (frame_actual.pagina_cargada != null) {
+                    System.out.println("El frame " + frame_actual.id_frame + " contiene la página: " + frame_actual.pagina_cargada.id_pagina + "\n");
+                } else {
+                    System.out.println("El frame " + frame_actual.id_frame + "no pertenece a ningún proceso ni tiene página cargada");
+                }
+            }
 
-     System.out.println();
-     System.out.println();
-   }
- }
+            System.out.println("\n\n");
+        }
+    }
 
  public MPrimaria (String s)
 { Nombre = s;
@@ -39,7 +57,7 @@ public class MPrimaria
 }
 
 //Constructor construye una lista vacia con un nombre de List
-public MPrimaria(){ this ("Lista");}
+public MPrimaria(){ this ("Memoria Primaria");}
 
 //Inserta un Elemento al Frente de la Lista
 //Si esta vac�a PrimerNodo y UltimoNodo se refieren al nuevo nodo. Si no PrimerNodo se refiere al nuevo nodo.

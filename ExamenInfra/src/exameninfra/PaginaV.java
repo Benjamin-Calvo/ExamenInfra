@@ -7,7 +7,7 @@ class PaginaV {
 
     // datos amigables para que la Clase Lista Tenga un acceso directo
 
-    int id;
+    int id_pagina;
     int tamaño;
     ArrayList<Referencia> referencias_contenidas = new ArrayList<>();
 
@@ -15,7 +15,7 @@ class PaginaV {
 
 //Construtor  Crea un nodo del tipo Object
     PaginaV(int id, int tam) {
-        this.id= id;
+        this.id_pagina= id;
         tamaño = tam;
         siguiente = null;  //siguiente con valor de nulo
     }
@@ -26,11 +26,6 @@ class PaginaV {
         }
     }
 
-// Constructor Crea un nodo del Tipo Object y al siguiente nodo de la lista
-    PaginaV(int valor, PaginaV signodo) {
-        tamaño = valor;
-        siguiente = signodo; //siguiente se refiere al siguiente nodo
-    }
 
 //Retorna el dato que se encuentra en este nodo
     int getTamaño() {
