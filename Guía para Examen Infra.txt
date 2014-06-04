@@ -17,25 +17,33 @@ Políticas de Fetch (involucra páginas virtuales y memoria principal)
 Placement policy (involucra procesos y memoria principal)
 
 -First available:
-	
+	El proceso es ubicado en el primer espacio en memoria principal lo
+	suficientemente grande para albergarlo desde el principio
 
 -Next available
+	El proceso es ubicado en el primer espacio en memoria principal lo
+	suficientemente grande para albergarlo desde el último proceso ubicado
 
 -------------
 	
 Replacement policy
 
 -LRU:
-
+	Reemplaza el frame de memoria principal con la página cuya referencia es
+	la más antigua hasta el momento (Last-Recently-Used)
 	
 -FIFO:
+	Reemplaza el frame de memoria principal con la página cuyo tiempo de carga
+	es el más antiguo hasta el momento (primero en entrar) (first-in-first-out)
+	(round-robin)
 
-	
 -MRU:
+	Reemplaza el frame de memoria principal con la página cuya referencia es
+	la más reciente hasta el momento (Most-Recently-Used)
 
-	
 -Clock:
-
+	*Cuando una página es referenciada se asigna un bit de uso en 1
+	*Aquellas páginas recien cargadas tienen bit de uso en 1
 -------------
 	
 Resident Set Management
