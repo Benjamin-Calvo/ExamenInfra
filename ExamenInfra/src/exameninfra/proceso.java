@@ -10,7 +10,11 @@ package exameninfra;
  *
  * @author Benjamin Calvo
  */
-public class proceso implements Runnable{
+public class proceso extends Frame implements Runnable{
+
+    public proceso(int id) {
+        super(id);
+    }
     
     /*El proceso es ubicado en el primer espacio en memoria principal lo
 	suficientemente grande para albergarlo desde el principio*/

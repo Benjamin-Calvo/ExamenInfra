@@ -21,15 +21,11 @@ public class MSecundaria {
             PaginaV pagina_actual = PrimerNodo;
             while (pagina_actual.siguiente != PrimerNodo) {
                 System.out.println("La página "+pagina_actual.id_pagina+" contiene:");
-                for (Referencia referencia_actual : pagina_actual.referencias_contenidas) {
-                    System.out.println("\tLa referencia con la dirección "+referencia_actual.getDireccion() + " contiene "+referencia_actual.getContenido()+"\n");
-                }
+                
                 pagina_actual = pagina_actual.siguiente;
             }
             System.out.println("La página " + pagina_actual.id_pagina + " contiene:");
-            for (Referencia referencia_actual : pagina_actual.referencias_contenidas) {
-                System.out.println("\tLa referencia con la dirección " + referencia_actual.getDireccion() + " contiene " + referencia_actual.getContenido() + "\n");
-            }
+            
             System.out.println("\n\n");
         }
     }

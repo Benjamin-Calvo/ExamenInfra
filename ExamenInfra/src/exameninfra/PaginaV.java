@@ -1,7 +1,9 @@
 package exameninfra;
 // Clase NodosLista
 
-import java.util.ArrayList;
+import java.text.DateFormat;
+import java.util.Date;
+import javax.print.attribute.standard.DateTimeAtCreation;
 
 class PaginaV {
 
@@ -9,36 +11,48 @@ class PaginaV {
 
     int id_pagina;
     int tamaño;
-    ArrayList<Referencia> referencias_contenidas = new ArrayList<>();
-
+    String modificado;
+    //DateTime.now()
+    //DateTime dt = DateTime.now();
+    //System.out.println(" 6. " + DateFormat.getTimeInstance(DateFormat.MEDIUM).format(now));
+    
+    
     PaginaV siguiente;
 
 //Construtor  Crea un nodo del tipo Object
     PaginaV(int id, int tam) {
         this.id_pagina= id;
         tamaño = tam;
+        //modificado = new DateTimeAtCreation;
         siguiente = null;  //siguiente con valor de nulo
     }
 
-    public void agregarReferencias(ArrayList<Referencia> refs) {
-        for (Referencia referencia_actual : refs) {
-            this.referencias_contenidas.add(referencia_actual);
-        }
-    }
-
-
+    
 //Retorna el dato que se encuentra en este nodo
     int getTamaño() {
         return tamaño;
     }
 
-    ArrayList<Referencia> getReferencias() {
-        return referencias_contenidas;
-    }
-
+    
 //Retorna el siguiente nodo
     PaginaV getnext() {
         return siguiente;
+    }
+    public String getTiempoModificacion(){
+        String fecha_modificado = "";
+        
+        
+        return fecha_modificado;    
+    }
+    
+    public void actualizar(){
+        Date now = new Date();
+        if (this.modificado.compareTo(DateFormat.getTimeInstance(DateFormat.MEDIUM).format(now).toString()) > 0){
+            this.modificado = DateFormat.getTimeInstance(DateFormat.MEDIUM).format(now).toString();
+        }
+        else{
+            System.out.println("version de page antigua");
+        }
     }
 
 };
