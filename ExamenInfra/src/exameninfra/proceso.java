@@ -6,15 +6,27 @@
 
 package exameninfra;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Benjamin Calvo
  */
 public class proceso extends Frame implements Runnable{
-
+    
+    int id;
+    ArrayList<Frame> frames_asignados;
+    Frame puntero;
+    
     public proceso(int id) {
         super(id);
     }
+    
+    public void FramesAsignados(ArrayList<Frame> framesPorAsignar){
+        this.frames_asignados = framesPorAsignar;
+        puntero = null;
+    }
+    
     
     /*El proceso es ubicado en el primer espacio en memoria principal lo
 	suficientemente grande para albergarlo desde el principio*/
@@ -34,4 +46,5 @@ public class proceso extends Frame implements Runnable{
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+        
 }

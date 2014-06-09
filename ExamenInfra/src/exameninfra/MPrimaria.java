@@ -322,6 +322,41 @@ public class MPrimaria {
             return 0;   
         }
     }
+    
+    public ArrayList<Frame> FramesAsignados(int idProceso){
+        Frame aux = this.PrimerNodo.siguiente;
+        ArrayList<Frame> frames = new ArrayList<>();
+        while(!aux.equals(PrimerNodo)){
+            if (aux.id_propietario==idProceso){
+                frames.add(aux);
+            }
+            aux=aux.siguiente;
+        }
+        if (aux.id_propietario==idProceso){
+            frames.add(aux);
+        }
+        return frames;
+    }
+    
+    public void DemandCleaning(Frame porActualizar){
+        if(!"".equals(porActualizar.modificado)){
+            porActualizar.actualizarFrame();
+        }
+        porActualizar.pagina_cargada.actualizar();
+    }
+    
+    public void PrepagingCleaning(){
+        Frame aux = PrimerNodo.siguiente;
+        while (!aux.equals(PrimerNodo)){
+            if (aux.id_propietario != 0 && aux.pagina_cargada != null ){
+                DemandCleaning(aux);
+            }
+            aux=aux.siguiente;
+        }
+        if (aux.id_propietario != 0 && aux.pagina_cargada != null ){
+            DemandCleaning(aux);
+        }
+    }
 // Convierte una lista Simple en Circular
 //public void ConvertCircularSimple()
 //{
