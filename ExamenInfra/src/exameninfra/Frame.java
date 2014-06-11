@@ -63,7 +63,7 @@ class Frame {
         int y = 25;
         for (int i = 1;i<=id;i++){
             x+= 50;
-            if ((i % 18) == 0 && i!=0){
+            if ((i % 14) == 0 && i!=0){
                 x=10;
                 y+=50;
             }

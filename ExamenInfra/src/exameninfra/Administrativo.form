@@ -11,7 +11,7 @@
       <Color id="Cursor Por defecto"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[450, 540]"/>
+      <Dimension value="[450, 550]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
@@ -40,8 +40,8 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" pref="511" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="29" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" pref="535" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,7 +53,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[490, 400]"/>
+          <Dimension value="[490, 410]"/>
         </Property>
       </Properties>
 
@@ -68,22 +68,11 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jSeparator1" max="32767" attributes="0"/>
+                                  <Component id="jSeparator1" pref="436" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="label_address_direct_type" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="address_indirect_type" max="32767" attributes="0"/>
-                                              <Component id="address_type" min="-2" pref="96" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
@@ -101,10 +90,10 @@
                                               </Group>
                                           </Group>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="sync_receive" max="32767" attributes="0"/>
-                                              <Component id="sync_send" max="32767" attributes="0"/>
-                                              <Component id="sync_receive1" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="sync_receive2" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
+                                              <Component id="sel_placement" max="32767" attributes="0"/>
+                                              <Component id="sel_fetch" max="32767" attributes="0"/>
+                                              <Component id="sel_replacement" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="sel_cleaning" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -117,14 +106,25 @@
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jSpinner2" alignment="0" pref="102" max="32767" attributes="0"/>
-                                              <Component id="jSpinner1" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jSpinner3" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jSpinner4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jSpinnerMemory" alignment="0" pref="102" max="32767" attributes="0"/>
+                                              <Component id="jSpinnerSize" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jSpinnerProcess" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jSpinnerCommands" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="label_address_direct_type" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="sel_size" min="-2" pref="96" max="-2" attributes="0"/>
+                                              <Component id="sel_replacement_scope" min="-2" pref="96" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -148,9 +148,9 @@
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                  <Component id="adm_continue_1" min="-2" pref="288" max="-2" attributes="0"/>
-                  <EmptySpace pref="170" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                  <Component id="btn_Continue" min="-2" pref="288" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -163,80 +163,72 @@
                       <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel7" min="-2" pref="22" max="-2" attributes="0"/>
-                              <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jSpinner1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jSpinner2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="56" pref="56" max="-2" attributes="0"/>
-                                  <Component id="jSpinner3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sel_fetch" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sel_placement" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sel_replacement" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="sel_cleaning" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="sel_size" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="label_address_direct_type" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="sel_replacement_scope" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="sync_send" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="sync_receive" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="sync_receive1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="sync_receive2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="label_address_direct_type" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="address_type" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="address_indirect_type" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="44" pref="44" max="-2" attributes="0"/>
-                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel7" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jSpinnerSize" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jSpinnerMemory" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="label_address_direct_type1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="label_address_direct_type2" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="label_address_direct_type2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jSpinnerProcess" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jSpinner4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerCommands" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="label_address_direct_type3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="adm_continue_1" min="-2" pref="52" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="btn_Continue" min="-2" pref="52" max="-2" attributes="0"/>
+                  <EmptySpace pref="98" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -268,7 +260,7 @@
             <Property name="text" type="java.lang.String" value="Fetch:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="sync_send">
+        <Component class="javax.swing.JComboBox" name="sel_fetch">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -276,9 +268,10 @@
                 <StringItem index="1" value="Prepaging"/>
               </StringArray>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sync_sendActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sel_fetchActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -289,7 +282,7 @@
             <Property name="text" type="java.lang.String" value="Placement:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="sync_receive">
+        <Component class="javax.swing.JComboBox" name="sel_placement">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -299,7 +292,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sync_receiveActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sel_placementActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="label_address_direct_type">
@@ -314,7 +307,7 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="address_indirect_type">
+        <Component class="javax.swing.JComboBox" name="sel_replacement_scope">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -324,7 +317,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="address_indirect_typeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sel_replacement_scopeActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
@@ -335,7 +328,7 @@
             <Property name="text" type="java.lang.String" value="Size:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="address_type">
+        <Component class="javax.swing.JComboBox" name="sel_size">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -345,7 +338,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="address_typeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sel_sizeActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -356,7 +349,7 @@
             <Property name="text" type="java.lang.String" value="Replacement:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="sync_receive1">
+        <Component class="javax.swing.JComboBox" name="sel_replacement">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -368,7 +361,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sync_receive1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sel_replacementActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
@@ -390,7 +383,7 @@
             <Property name="text" type="java.lang.String" value="Cleaning:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="sync_receive2">
+        <Component class="javax.swing.JComboBox" name="sel_cleaning">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -400,7 +393,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sync_receive2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sel_cleaningActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator4">
@@ -430,7 +423,7 @@
             <Property name="text" type="java.lang.String" value="Size:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="adm_continue_1">
+        <Component class="javax.swing.JButton" name="btn_Continue">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="44" green="9c" red="62" type="rgb"/>
@@ -447,7 +440,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adm_continue_1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ContinueActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="label_address_direct_type2">
@@ -480,11 +473,11 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner1">
+        <Component class="javax.swing.JSpinner" name="jSpinnerSize">
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner2">
+        <Component class="javax.swing.JSpinner" name="jSpinnerMemory">
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner3">
+        <Component class="javax.swing.JSpinner" name="jSpinnerProcess">
         </Component>
         <Component class="javax.swing.JLabel" name="label_address_direct_type3">
           <Properties>
@@ -498,7 +491,7 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner4">
+        <Component class="javax.swing.JSpinner" name="jSpinnerCommands">
         </Component>
       </SubComponents>
     </Container>

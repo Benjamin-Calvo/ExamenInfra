@@ -41,6 +41,8 @@ public class main {
              Thread t = new Thread()
              proceso_actual;
         }*/
+        Administrativo admin = new Administrativo();
+        admin.setVisible(true);
         MainMemory mm = new MainMemory();
         MPrimaria mp = new MPrimaria(128, mm);
         mm.setVisible(true);
