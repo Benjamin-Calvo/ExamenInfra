@@ -1,6 +1,7 @@
 package exameninfra;
 // Clase NodosLista
 
+import java.awt.GridLayout;
 import static java.lang.Thread.sleep;
 import java.text.DateFormat;
 import java.util.Date;
@@ -39,23 +40,25 @@ class Frame {
         pnl.setBounds(posicion[0], posicion[1], 45, 45);
         pnl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 51)));
         lblFrame = new JLabel("" + id);
-        lblProceso = new JLabel("");
-        lblPagina = new JLabel("");
+        lblProceso = new JLabel("P: 00");
+        lblPagina = new JLabel("PV: 00");
         pnl.add(lblFrame);
         pnl.add(lblProceso);
         pnl.add(lblPagina);
-        lblFrame.setLocation(2, 2);
-        lblProceso.setLocation(2, 18);
-        lblFrame.setLocation(2, 33);
+        lblFrame.setLocation(2, 1);
+        lblProceso.setLocation(2, 7);
+        lblFrame.setLocation(2, 10);
+        pnl.setLayout(new GridLayout(3, 1, 3, 3));
         pnl.setVisible(true);
     }
 
     public int[] getPosicion(int id){
         int x = 10;
-        int y = 15;
-        for (int i = 0;i<id;i++){
+        int y = 25;
+        for (int i = 1;i<=id;i++){
             x+= 50;
-            if ((i % 9) == 0){
+            if ((i % 9) == 0 && i!=0){
+                x=10;
                 y+=50;
             }
         }
