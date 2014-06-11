@@ -41,6 +41,9 @@ public class main {
              Thread t = new Thread()
              proceso_actual;
         }*/
+        MainMemory mm = new MainMemory();
+        MPrimaria mp = new MPrimaria(12, mm);
+        
         
     }
     

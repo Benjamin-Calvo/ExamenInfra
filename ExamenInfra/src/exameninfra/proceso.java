@@ -31,18 +31,6 @@ public class proceso extends Frame implements Runnable {
         cantFrames = framesPorAsignar.size();
     }
 
-    /*El proceso es ubicado en el primer espacio en memoria principal lo
-     suficientemente grande para albergarlo desde el principio*/
-    public void firstAvailable() {
-
-    }
-
-    /*El proceso es ubicado en el primer espacio en memoria principal lo suficientemente 
-     grande para albergarlo desde el último proceso ubicado*/
-    public void nextAvailable() {
-
-    }
-
     //proceso
     public boolean estaCargado(PaginaV pagina_virtual) {
         for (Frame frame_actual : frames_asignados) {

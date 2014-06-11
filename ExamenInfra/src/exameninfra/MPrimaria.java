@@ -56,10 +56,10 @@ public class MPrimaria {
     }
 //Constructor construye una lista vacia con un nombre de List
 
-    public MPrimaria(int cantMemoria) {
+    public MPrimaria(int cant_frame, MainMemory mm) {
         this("Memoria Primaria");
-        for (int i = 0; i < cantMemoria; i++) {
-            this.InsertaFinal(i);
+        for (int i = 0; i < cant_frame; i++) {
+            this.InsertaFinal(i, mm);
         }
     }
   
@@ -81,22 +81,36 @@ public class MPrimaria {
         }
     }
     
-    public boolean hayDisponible(){
+    public Frame hayDisponible(){
         Frame aux = this.PrimerNodo;
         for(int i=0; i < this.largoLista(); i++){
             if (aux.id_propietario == 0){
-                return true;
+                return aux;
             }
             aux=aux.siguiente;
         }
-        return false;
+        if(aux.equals(this.PrimerNodo)){
+            aux = hayDisponibleFrame();
+        }
+        return null;
+    }
+    
+    public Frame hayDisponibleFrame(){
+        Frame aux = this.PrimerNodo;
+        for(int i=0; i < this.largoLista(); i++){
+            if (aux.pagina_cargada == null){
+                return aux;
+            }
+            aux=aux.siguiente;
+        }
+        return null;
     }
     
     public void setFramesFirstAvailable(int cantFramesRequeridos, int idProceso){
-        Frame aux = PrimerNodo;
+        Frame aux = hayDisponible();
         int disponibles =0;
         ArrayList <Frame> candidatos = new ArrayList<>();
-        if (hayDisponible()){
+        if (aux!= null){
             while(disponibles != cantFramesRequeridos && aux != PrimerNodo){
                 if(aux.id_propietario == 0){
                     candidatos.add(aux);
@@ -131,7 +145,7 @@ public class MPrimaria {
             Frame aux = this.ultimoInsertado.siguiente;
             int disponibles = 0;
             ArrayList <Frame> candidatos = new ArrayList<>();
-            if (hayDisponible()){
+            if (!hayDisponible().equals(null)){
                 while(disponibles < cantFramesRequeridos && aux != this.ultimoInsertado){
                     if (aux.equals(PrimerNodo)){
                         disponibles = 0;
@@ -205,9 +219,10 @@ public class MPrimaria {
 
 //Inserta al Final de la Lista
 //Si la lista se encuentra vac�a, el PrimerNodo y el UltimoNodo se refieren al nuevo nodo. Si no, la variable de siguiente de UltimoNodo se refiere al nuevo nodo.
-    public void InsertaFinal(int ElemInser) {
+    public void InsertaFinal(int ElemInser, MainMemory mm) {
         if (VaciaLista()) {
             PrimerNodo = new Frame(ElemInser);
+            mm.pnlPrincipal.add(PrimerNodo.pnl);
             PrimerNodo.siguiente = PrimerNodo;
         } else {
             Frame Aux = PrimerNodo;
@@ -215,6 +230,7 @@ public class MPrimaria {
                 Aux = Aux.siguiente;
             }
             Frame Nuevo = new Frame(ElemInser);
+            mm.pnlPrincipal.add(Nuevo.pnl);
             Aux.siguiente = Nuevo;
             Nuevo.siguiente = PrimerNodo;   //Referencia hacia primer Nodo
         }
