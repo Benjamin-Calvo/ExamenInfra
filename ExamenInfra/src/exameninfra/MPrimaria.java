@@ -357,36 +357,11 @@ public class MPrimaria {
             DemandCleaning(aux);
         }
     }
-// Convierte una lista Simple en Circular
-//public void ConvertCircularSimple()
-//{
-//	if  (VaciaLista())
-//		System.out.println ("La lista se encuentra vacia");
-//	else
-//		{
-//			NodosLista Aux = PrimerNodo;
-//			NodosLista Aux1 = PrimerNodo;
-//			while (Aux.siguiente !=null)
-//				Aux=Aux.siguiente;
-//			if (Aux.siguiente ==null)
-//				Aux.siguiente=Aux1;
-//		}
-//}
-//
-// Convierte una lista Doble en Circular
-//
-//public void ConvertCircularDoble()
-//{
-//	if  (VaciaLista())
-//		System.out.println ("La lista se encuentra vacia");
-//	else
-//		{
-//			NodosLista Aux = PrimerNodo;
-//			NodosLista Aux1 = PrimerNodo;
-//			while (Aux.siguiente !=null)
-//				Aux=Aux.siguiente;
-//			if (Aux.siguiente ==null)
-//				Aux.siguiente.anterior=Aux1;
-//		}
-//}
+    
+    //variable global
+    public void getFramesDisponibles(int idProceso){
+        
+        //FramesAsignados(idProceso);
+    }
+
 };

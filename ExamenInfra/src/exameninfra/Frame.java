@@ -14,7 +14,7 @@ class Frame {
     int id_propietario;
     //int tiempo_referencia = 0;
     //boolean bloqueado; //true bloqueado, false desbloqueado
-    //boolean uso; //true bit uso = 1, false bit =0
+    boolean uso; //true bit uso = 1, false bit =0
     PaginaV pagina_cargada;
     String modificado;
     Frame siguiente;
