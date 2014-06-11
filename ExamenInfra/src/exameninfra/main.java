@@ -42,7 +42,7 @@ public class main {
              proceso_actual;
         }*/
         MainMemory mm = new MainMemory();
-        MPrimaria mp = new MPrimaria(45, mm);
+        MPrimaria mp = new MPrimaria(128, mm);
         mm.setVisible(true);
         
         

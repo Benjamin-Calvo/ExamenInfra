@@ -1,6 +1,8 @@
 package exameninfra;
 // Clase NodosLista
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import static java.lang.Thread.sleep;
 import java.text.DateFormat;
@@ -38,17 +40,21 @@ class Frame {
         pnl = new JPanel();
         int[] posicion = getPosicion(id);
         pnl.setBounds(posicion[0], posicion[1], 45, 45);
-        pnl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 51)));
-        lblFrame = new JLabel("" + id);
-        lblProceso = new JLabel("P: 00");
+        //pnl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 51)));
+        pnl.setBorder(javax.swing.BorderFactory.createTitledBorder(null, ""+id, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 10), new java.awt.Color(0, 0, 51)));
+        //lblFrame = new JLabel("" + id);
+        lblProceso = new JLabel("P:  00");
+        lblProceso.setFont(new Font("Serif", Font.PLAIN, 9));
         lblPagina = new JLabel("PV: 00");
-        pnl.add(lblFrame);
+        lblPagina.setFont(new Font("Serif", Font.PLAIN, 9));
+        lblPagina.setForeground(Color.RED);
+        //pnl.add(lblFrame);
         pnl.add(lblProceso);
         pnl.add(lblPagina);
-        lblFrame.setLocation(2, 1);
-        lblProceso.setLocation(2, 7);
-        lblFrame.setLocation(2, 10);
-        pnl.setLayout(new GridLayout(3, 1, 3, 3));
+        //lblFrame.setLocation(2, 1);
+        lblProceso.setLocation(2, 10);
+        lblPagina.setLocation(2, 15);
+        pnl.setLayout(new GridLayout(2, 1, 3, 3));
         pnl.setVisible(true);
     }
 
@@ -57,7 +63,7 @@ class Frame {
         int y = 25;
         for (int i = 1;i<=id;i++){
             x+= 50;
-            if ((i % 9) == 0 && i!=0){
+            if ((i % 18) == 0 && i!=0){
                 x=10;
                 y+=50;
             }
