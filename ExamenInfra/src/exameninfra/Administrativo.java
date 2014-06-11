@@ -6,6 +6,8 @@
 package exameninfra;
 
 import java.util.Objects;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +18,17 @@ public class Administrativo extends javax.swing.JFrame {
     /**
      * Creates new form Administrativo
      */
+    public boolean fetch;
+    public boolean placement;
+    public int replacement;
+    public boolean cleaning;
+    public boolean management_size;
+    public boolean replacement_scope;
+    public int sys_size;
+    public int sys_memory;
+    public int sys_process;
+    public int sys_commands;
+
     public Administrativo() {
         initComponents();
         //sel_replacement_scope.setVisible(false);
@@ -59,6 +72,7 @@ public class Administrativo extends javax.swing.JFrame {
         jSpinnerProcess = new javax.swing.JSpinner();
         label_address_direct_type3 = new javax.swing.JLabel();
         jSpinnerCommands = new javax.swing.JSpinner();
+        jSeparator5 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Configuración del Sistema de Memoria Virtual");
@@ -68,6 +82,7 @@ public class Administrativo extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setName(""); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(490, 410));
 
         jSeparator1.setForeground(new java.awt.Color(98, 156, 68));
@@ -147,11 +162,11 @@ public class Administrativo extends javax.swing.JFrame {
 
         label_address_direct_type1.setBackground(new java.awt.Color(255, 255, 255));
         label_address_direct_type1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        label_address_direct_type1.setText("Memory:");
+        label_address_direct_type1.setText("Total memory (MB):");
         label_address_direct_type1.setOpaque(true);
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel14.setText("Size:");
+        jLabel14.setText("Page size (KBs):");
 
         btn_Continue.setBackground(new java.awt.Color(98, 156, 68));
         btn_Continue.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -166,7 +181,7 @@ public class Administrativo extends javax.swing.JFrame {
 
         label_address_direct_type2.setBackground(new java.awt.Color(255, 255, 255));
         label_address_direct_type2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        label_address_direct_type2.setText("Process:");
+        label_address_direct_type2.setText("Maximum processes:");
         label_address_direct_type2.setOpaque(true);
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -177,8 +192,10 @@ public class Administrativo extends javax.swing.JFrame {
 
         label_address_direct_type3.setBackground(new java.awt.Color(255, 255, 255));
         label_address_direct_type3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        label_address_direct_type3.setText("Commands:");
+        label_address_direct_type3.setText("Commands for visualization:");
         label_address_direct_type3.setOpaque(true);
+
+        jSeparator5.setForeground(new java.awt.Color(98, 156, 68));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -186,70 +203,66 @@ public class Administrativo extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGap(5, 5, 5)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(90, 90, 90)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel8)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jLabel4))
+                                        .addGap(22, 22, 22))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(label_address_direct_type)
+                                            .addComponent(jLabel13))
+                                        .addGap(27, 27, 27)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(sel_placement, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(sel_fetch, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(sel_replacement, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(sel_cleaning, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(sel_size, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sel_replacement_scope, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(label_address_direct_type2)
+                                    .addComponent(label_address_direct_type1)
+                                    .addComponent(jLabel14)
+                                    .addComponent(label_address_direct_type3))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jSpinnerMemory)
+                                    .addComponent(jSpinnerSize)
+                                    .addComponent(jSpinnerProcess)
+                                    .addComponent(jSpinnerCommands, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(44, 44, 44)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jLabel9)
-                                                    .addComponent(jLabel8)
-                                                    .addComponent(jLabel5))
-                                                .addGap(19, 19, 19))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel4)
-                                                .addGap(18, 18, 18)))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(sel_placement, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(sel_fetch, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(sel_replacement, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(sel_cleaning, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(55, 55, 55)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(label_address_direct_type2)
-                                            .addComponent(label_address_direct_type1)
-                                            .addComponent(jLabel14)
-                                            .addComponent(label_address_direct_type3))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jSpinnerMemory, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                                            .addComponent(jSpinnerSize)
-                                            .addComponent(jSpinnerProcess)
-                                            .addComponent(jSpinnerCommands)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(label_address_direct_type)
-                                            .addComponent(jLabel13))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(sel_size, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(sel_replacement_scope, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(86, 86, 86))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jSeparator2)
-                                .addGap(1, 1, 1))
+                                .addComponent(jSeparator1))
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSeparator4)))))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
+                .addGap(92, 92, 92)
                 .addComponent(btn_Continue, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -260,59 +273,63 @@ public class Administrativo extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(sel_fetch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sel_fetch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(sel_placement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sel_placement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(sel_replacement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sel_replacement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sel_cleaning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sel_size, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(sel_size, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel13))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(label_address_direct_type)
-                            .addComponent(sel_replacement_scope, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(sel_replacement_scope, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_address_direct_type))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSpinnerSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinnerMemory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jSpinnerMemory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label_address_direct_type1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(label_address_direct_type1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(label_address_direct_type2)
-                            .addComponent(jSpinnerProcess, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jSpinnerProcess, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_address_direct_type2))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSpinnerCommands, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label_address_direct_type3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_Continue, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -324,7 +341,7 @@ public class Administrativo extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -334,21 +351,27 @@ public class Administrativo extends javax.swing.JFrame {
     private void btn_ContinueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ContinueActionPerformed
         System.out.println("Iniciando configuraciones");
 //        int n = Integer.parseInt(number_process.getValue().toString());
-        boolean fetch = (sel_fetch.getSelectedItem().equals("Demand")) ? true : false;
-        boolean placement = (sel_placement.getSelectedItem().equals("First Available")) ? true : false;
-        int replacement = sel_replacement.getSelectedIndex();
-        boolean cleaning = (sel_size.getSelectedItem().equals("Demand")) ? true : false;
-        boolean management_size = (sel_size.getSelectedItem().equals("Fixed")) ? true : false;
-        boolean replacement_scope = (sel_replacement_scope.getSelectedItem().equals("Global")) ? true : false;
-        int sys_size = (Integer) jSpinnerSize.getValue();
-        int sys_memory = (Integer) jSpinnerMemory.getValue();
-        int sys_process = (Integer) jSpinnerProcess.getValue();
-        int sys_commands = (Integer) jSpinnerCommands.getValue();
+        fetch = (sel_fetch.getSelectedItem().equals("Demand")) ? true : false;
+        placement = (sel_placement.getSelectedItem().equals("First Available")) ? true : false;
+        replacement = sel_replacement.getSelectedIndex();
+        cleaning = (sel_size.getSelectedItem().equals("Demand")) ? true : false;
+        management_size = (sel_size.getSelectedItem().equals("Fixed")) ? true : false;
+        replacement_scope = (sel_replacement_scope.getSelectedItem().equals("Global")) ? true : false;
+        sys_size = (Integer) jSpinnerSize.getValue();
+        sys_memory = (Integer) jSpinnerMemory.getValue();
+        sys_process = (Integer) jSpinnerProcess.getValue();
+        sys_commands = (Integer) jSpinnerCommands.getValue();
         System.out.println(" " + fetch + " " + placement + " " + replacement + " " + cleaning + " " + management_size + " " + replacement_scope + " " + sys_size + " " + sys_memory + " " + sys_process + " " + sys_commands);
         //boolean format_type_b = (format_type.getSelectedItem().equals("Fijo")) ? true : false;
-
-        //this.setVisible(false);
-
+        if(0< sys_size  && 0< sys_memory && 0< sys_process && 0< sys_commands){
+            CargarArchivos cargar_archivos = new CargarArchivos();
+            cargar_archivos.setVisible(true);
+            this.setVisible(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(new JFrame(), "Error en la configuración", "Mensaje",
+        JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btn_ContinueActionPerformed
 
     private void sel_cleaningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sel_cleaningActionPerformed
@@ -361,9 +384,9 @@ public class Administrativo extends javax.swing.JFrame {
 
     private void sel_sizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sel_sizeActionPerformed
         if (sel_size.getSelectedItem().equals("Variable")) {
-            sel_replacement_scope.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Local" }));            
+            sel_replacement_scope.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"Local"}));
         } else {
-            sel_replacement_scope.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Global", "Local" }));
+            sel_replacement_scope.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"Global", "Local"}));
         }
     }//GEN-LAST:event_sel_sizeActionPerformed
 
@@ -430,6 +453,7 @@ public class Administrativo extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSpinner jSpinnerCommands;
     private javax.swing.JSpinner jSpinnerMemory;
     private javax.swing.JSpinner jSpinnerProcess;
