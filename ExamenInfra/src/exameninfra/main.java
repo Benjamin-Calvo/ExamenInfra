@@ -31,7 +31,7 @@ public class main {
         // TODO code application logic here
         /*int cantProcesos;
         cantProcesos =3;
-        proceso p1;
+        proceso p1;&
         Thread t1 = new Thread(p1=new proceso());
         //t1.start();
         ArrayList <proceso> pr = new ArrayList<>();        

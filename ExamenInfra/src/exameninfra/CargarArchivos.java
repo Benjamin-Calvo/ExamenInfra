@@ -7,6 +7,7 @@
 package exameninfra;
 
 import java.io.File;
+import java.util.ArrayList;
 import javax.swing.JFileChooser;
 
 /**
@@ -163,6 +164,16 @@ public class CargarArchivos extends javax.swing.JFrame {
             actualFile2 = fc2.getSelectedFile();
             //This is where a real application would open the file.
             fileName1.setText(actualFile.getName());
+            ParserProyecto parser = new ParserProyecto(actualFile);
+            ArrayList<int[]> procesos = parser.generar();
+            if(procesos.isEmpty()){
+                System.out.println("ERROR");
+            } else {
+                System.out.println("Pr - referencia");
+                for (int[] temp : procesos) {
+                    System.out.println(temp[0]+" - "+temp[1]);
+                }
+            }
         }
     }//GEN-LAST:event_btnSelect1ActionPerformed
 
@@ -174,6 +185,16 @@ public class CargarArchivos extends javax.swing.JFrame {
             actualFile = fc.getSelectedFile();
             //This is where a real application would open the file.
             fileName.setText(actualFile.getName());
+            ParserProyecto parser = new ParserProyecto(actualFile);
+            ArrayList<int[]> procesos = parser.generar();
+            if(procesos.isEmpty()){
+                System.out.println("ERROR");
+            } else {
+                System.out.println("Pr - memoria");
+                for (int[] temp : procesos) {
+                    System.out.println(temp[0]+" - "+temp[1]);
+                }
+            }
         }
     }//GEN-LAST:event_btnSelectActionPerformed
 
