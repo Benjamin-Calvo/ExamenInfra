@@ -43,9 +43,9 @@ class Frame {
         //pnl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 51)));
         pnl.setBorder(javax.swing.BorderFactory.createTitledBorder(null, ""+id, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 10), new java.awt.Color(0, 0, 51)));
         //lblFrame = new JLabel("" + id);
-        lblProceso = new JLabel("P:  00");
+        lblProceso = new JLabel("P:  ");
         lblProceso.setFont(new Font("Serif", Font.PLAIN, 9));
-        lblPagina = new JLabel("PV: 00");
+        lblPagina = new JLabel("PV: ");
         lblPagina.setFont(new Font("Serif", Font.PLAIN, 9));
         lblPagina.setForeground(Color.RED);
         //pnl.add(lblFrame);

@@ -111,21 +111,34 @@ public class MPrimaria {
         int disponibles =0;
         ArrayList <Frame> candidatos = new ArrayList<>();
         if (aux!= null){
-            while(disponibles != cantFramesRequeridos && aux != PrimerNodo){
+            //while(disponibles != cantFramesRequeridos && aux != PrimerNodo){
+            while(disponibles != cantFramesRequeridos && aux.siguiente != PrimerNodo){
                 if(aux.id_propietario == 0){
                     candidatos.add(aux);
                     disponibles++;
-                }
+                }/*
                 else{
                     disponibles = 0;
                     candidatos.clear();
-                }
+                }*/
                 aux = aux.siguiente;
             }
-            if (!candidatos.isEmpty()){
+            if(aux.siguiente.equals(PrimerNodo)){
+                if(aux.id_propietario == 0){
+                    candidatos.add(aux);
+                    disponibles++;
+                }/*
+                else{
+                    disponibles = 0;
+                    candidatos.clear();
+                }*/
+                aux = aux.siguiente;
+            }
+            if (!candidatos.isEmpty() &&  disponibles == cantFramesRequeridos){
                 for (Frame disponible_actual: candidatos){
                     disponible_actual.id_propietario = idProceso;
-                    this.ultimoInsertado = disponible_actual;
+                    this.ultimoInsertado = disponible_actual;                    
+                    disponible_actual.lblProceso.setText("P:  "+disponible_actual.id_propietario);                    
                 }
             }
             else{

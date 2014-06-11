@@ -34,7 +34,7 @@ public class proceso extends Frame implements Runnable {
     //proceso
     public boolean estaCargado(PaginaV pagina_virtual) {
         for (Frame frame_actual : frames_asignados) {
-            if (frame_actual.pagina_cargada.equals(pagina_virtual)) {
+            if (frame_actual.pagina_cargada.id_pagina == pagina_virtual.id_pagina) {
                 return true;
             }
         }
@@ -43,7 +43,7 @@ public class proceso extends Frame implements Runnable {
 
     public Frame estaCargadoFrame(PaginaV pagina_virtual) {
         for (Frame frame_actual : frames_asignados) {
-            if (frame_actual.pagina_cargada.equals(pagina_virtual)) {
+            if (frame_actual.pagina_cargada.id_pagina == pagina_virtual.id_pagina) {
                 return frame_actual;
             }
         }
@@ -60,14 +60,24 @@ public class proceso extends Frame implements Runnable {
     }
 
     public boolean hayQueReemplazar(PaginaV pagina_virtual) {
-        for (Frame frame_actual : frames_asignados) {
-            if (frame_actual.pagina_cargada.equals(pagina_virtual)) {
-                return false;
+        for (Frame frame_actual : this.frames_asignados) {
+            //if (frame_actual.pagina_cargada.equals(pagina_virtual)) {}
+            //if (frame_actual.pagina_cargada == pagina_virtual) {
+            if (frame_actual.pagina_cargada != null) {
+                if (frame_actual.pagina_cargada.id_pagina == pagina_virtual.id_pagina) {
+                    return false;
+                }
             }
+
+            /*for (int i = 0; i<this.cantFrames; i ++){
+             if (frames_asignados.get(i).pagina_cargada == pagina_virtual) {
+             return false;
+             }*/
         }
         Frame frame_disponible = hayVacio();
         if (frame_disponible != null) {
             frame_disponible.pagina_cargada = pagina_virtual;
+            frame_disponible.lblPagina.setText("PV: " + pagina_virtual.id_pagina);
             return false;
         }
         return true;
@@ -83,15 +93,16 @@ public class proceso extends Frame implements Runnable {
     }
 
     public void replaceFIFO(PaginaV pagina_por_reemplazar) {
-        if (hayQueReemplazar(pagina_cargada)) {
+        if (hayQueReemplazar(pagina_por_reemplazar)) {
             this.frames_asignados.get(puntero).pagina_cargada = pagina_por_reemplazar;
+            this.frames_asignados.get(puntero).lblPagina.setText("PV: " + pagina_por_reemplazar.id_pagina);
         }
         siguientePuntero();
         this.frames_asignados.get(puntero).actualizarFrame();
     }
 
     public void replaceMRU(PaginaV pagina_por_reemplazar) {
-        if (hayQueReemplazar(pagina_cargada)) {
+        if (hayQueReemplazar(pagina_por_reemplazar)) {
             Frame aux = frames_asignados.get(0);
             Frame mas_joven = frames_asignados.get(0);
             for (Frame frame_actual : frames_asignados) {
@@ -100,12 +111,13 @@ public class proceso extends Frame implements Runnable {
                 }
             }
             mas_joven.pagina_cargada = pagina_por_reemplazar;
+            mas_joven.lblPagina.setText("PV: " + pagina_por_reemplazar.id_pagina);
             mas_joven.actualizarFrame();
         }
     }
 
     public void replaceLRU(PaginaV pagina_por_reemplazar) {
-        if (hayQueReemplazar(pagina_cargada)) {
+        if (hayQueReemplazar(pagina_por_reemplazar)) {
             Frame aux = frames_asignados.get(0);
             Frame mas_viejo = frames_asignados.get(0);
             for (Frame frame_actual : frames_asignados) {
@@ -114,18 +126,20 @@ public class proceso extends Frame implements Runnable {
                 }
             }
             mas_viejo.pagina_cargada = pagina_por_reemplazar;
+            mas_viejo.lblPagina.setText("PV: " + pagina_por_reemplazar.id_pagina);
             mas_viejo.actualizarFrame();
         }
     }
 
     public void replaceClock(PaginaV pagina_por_reemplazar) {
-        if (hayQueReemplazar(pagina_cargada)) {
+        if (hayQueReemplazar(pagina_por_reemplazar)) {
             Frame frame_actual = estaCargadoFrame(pagina_por_reemplazar);
             if (frame_actual != null) {
                 frame_actual.uso = true;
             } else {
                 siguientePuntero();
                 frames_asignados.get(puntero).pagina_cargada = pagina_por_reemplazar;
+                frames_asignados.get(puntero).lblPagina.setText("PV: " + pagina_por_reemplazar.id_pagina);
                 if (puntero == 0) {
                     reiniciarBits();
                 }

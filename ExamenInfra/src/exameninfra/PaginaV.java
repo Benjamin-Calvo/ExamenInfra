@@ -26,6 +26,12 @@ class PaginaV {
         //modificado = new DateTimeAtCreation;
         siguiente = null;  //siguiente con valor de nulo
     }
+    PaginaV(int id) {
+        this.id_pagina= id;
+        tamaño = 0;
+        //modificado = new DateTimeAtCreation;
+        siguiente = null;  //siguiente con valor de nulo
+    }
 
     
 //Retorna el dato que se encuentra en este nodo
