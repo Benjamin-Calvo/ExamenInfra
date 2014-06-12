@@ -20,6 +20,7 @@ public class proceso extends Frame implements Runnable {
 
     public proceso(int id) {
         super(id);
+        this.id = id;
         puntero = 0;
         frames_asignados = new ArrayList<Frame>();
         cantFrames = 0;
@@ -96,8 +97,8 @@ public class proceso extends Frame implements Runnable {
         if (hayQueReemplazar(pagina_por_reemplazar)) {
             this.frames_asignados.get(puntero).pagina_cargada = pagina_por_reemplazar;
             this.frames_asignados.get(puntero).lblPagina.setText("PV: " + pagina_por_reemplazar.id_pagina);
+            siguientePuntero();
         }
-        siguientePuntero();
         this.frames_asignados.get(puntero).actualizarFrame();
     }
 
@@ -136,6 +137,7 @@ public class proceso extends Frame implements Runnable {
             Frame frame_actual = estaCargadoFrame(pagina_por_reemplazar);
             if (frame_actual != null) {
                 frame_actual.uso = true;
+                frame_actual.actualizarFrame();
             } else {
                 siguientePuntero();
                 frames_asignados.get(puntero).pagina_cargada = pagina_por_reemplazar;
@@ -144,6 +146,7 @@ public class proceso extends Frame implements Runnable {
                     reiniciarBits();
                 }
                 frames_asignados.get(puntero).uso = true;
+                frames_asignados.get(puntero).actualizarFrame();
             }
         }
     }

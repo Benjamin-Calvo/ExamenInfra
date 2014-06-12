@@ -107,10 +107,10 @@ public class MPrimaria {
     }
     
     public void setFramesFirstAvailable(int cantFramesRequeridos, int idProceso){
-        Frame aux = hayDisponible();
-        int disponibles =0;
+        Frame aux = PrimerNodo;
+        int disponibles = 0;
         ArrayList <Frame> candidatos = new ArrayList<>();
-        if (aux!= null){
+        if (aux != null){
             //while(disponibles != cantFramesRequeridos && aux != PrimerNodo){
             while(disponibles != cantFramesRequeridos && aux.siguiente != PrimerNodo){
                 if(aux.id_propietario == 0){

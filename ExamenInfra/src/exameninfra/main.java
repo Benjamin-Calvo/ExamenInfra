@@ -50,14 +50,16 @@ public class main {
         mp.setFramesFirstAvailable(6, 5);
         p1.FramesAsignados(mp.FramesAsignados(5));
         
-        p1.replaceMRU(new PaginaV(1));
-        p1.replaceMRU(new PaginaV(7));
-        p1.replaceMRU(new PaginaV(7));
-        p1.replaceMRU(new PaginaV(7));
-        p1.replaceMRU(new PaginaV(5));
-        p1.replaceMRU(new PaginaV(7));
-        p1.replaceMRU(new PaginaV(7));
-        p1.replaceMRU(new PaginaV(7));
+        p1.replaceFIFO(new PaginaV(1));
+        p1.replaceFIFO(new PaginaV(2));
+        p1.replaceFIFO(new PaginaV(3));
+        p1.replaceFIFO(new PaginaV(4));
+        p1.replaceFIFO(new PaginaV(5));
+        p1.replaceFIFO(new PaginaV(6));
+        p1.replaceFIFO(new PaginaV(7));
+        p1.replaceFIFO(new PaginaV(7));
+        p1.replaceFIFO(new PaginaV(8));
+        p1.replaceFIFO(new PaginaV(7));
         
         proceso p2 = new proceso(99);
         mp.setFramesFirstAvailable(14, 99);
@@ -70,12 +72,17 @@ public class main {
         proceso p4 = new proceso(1);
         mp.setFramesFirstAvailable(6, 1);        
         p4.FramesAsignados(mp.FramesAsignados(1));                
-        p4.replaceFIFO(new PaginaV(1));
-        p4.replaceFIFO(new PaginaV(2));
-        p4.replaceFIFO(new PaginaV(3));
-        p4.replaceFIFO(new PaginaV(4));
-        p4.replaceFIFO(new PaginaV(5));
-        //p4.replaceFIFO(new PaginaV(6));
+        
+        p4.replaceClock(new PaginaV(1));
+        p4.replaceClock(new PaginaV(2));
+        p4.replaceClock(new PaginaV(3));
+        p4.replaceClock(new PaginaV(4));
+        p4.replaceClock(new PaginaV(5));
+        p4.replaceClock(new PaginaV(6));
+        p4.replaceClock(new PaginaV(7));
+        p4.replaceClock(new PaginaV(7));
+        p4.replaceClock(new PaginaV(6));
+        p4.replaceClock(new PaginaV(8));
         mm.setVisible(true);
         
         
